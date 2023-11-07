@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="carritoUno.css">
+    <link rel="stylesheet" href="carritoDos.css">  
+    <style>
+        body{
+            background-image: url(images/fondo28.png);
+            background-size:cover;
+            background-repeat: no-repeat;
+            
+        }
+        h5{
+    text-align: left;
+    color: #000000;
+    font-size: 30px;
+
+}
+h2{
+    color: #000000;
+}
+p{
+    text-align: left;
+    color: #000000;
+    font-size: 30px;
+
+}
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Variables
+            const baseDeDatos = [
+            {
+                  id: 1,
+                  nombre: 'Sandia',
+                  precio: 400,
+                  imagen: 'images/sandia.png'
+              },
+              {
+                  id: 2,
+                  nombre: 'Durazno',
+                  precio: 600,
+                  imagen: 'images/durazno.png'
+              },
+              {
+                  id: 3,
+                  nombre: 'Mandarina',
+                  precio: 300,
+                  imagen: 'images/mandarina.png'
+              },
+              {
+                  id: 4,
+                  nombre: 'Fresa',
+                  precio: 600,
+                  imagen: 'images/fresa.png'
+              }, 
+              {
+                id: 5,
+                nombre: 'Almendra',
+                precio: 1100,
+                imagen: 'images/almendra.png'
+              },
+              {
+                id: 6,
+                nombre: 'Avellana',
+                precio: 2000,
+                imagen: 'images/avellana.png'
+              },{
+                id: 7,
+                nombre: 'Avocado',
+                precio: 600,
+                imagen: 'images/avocado.png'
+              },{
+                id: 8,
+                nombre: 'betabel',
+                precio: 560,
+                imagen: 'images/betabel.png'
+              },{
+                id: 9,
+                nombre: 'cacahuate',
+                precio: 250,
+                imagen: 'images/cacahuate.png'
+              },{
+                id: 10,
+                nombre: 'Calabaza',
+                precio: 93,
+                imagen: 'images/calabaza.png'
+              },{
+                id: 11,
+                nombre: 'Caña',
+                precio: 66,
+                imagen: 'images/caña.png'
+              },{
+                id: 12,
+                nombre: 'Cebolla Blanca',
+                precio: 42,
+                imagen: 'images/cebolla_blanca.png'
+              },{
+                id: 13,
+                nombre: 'Cebolla Cambray',
+                precio: 87,
+                imagen: 'images/cebolla_cambray.png'
+              },{
+                id: 14,
+                nombre: 'Cebolla Morada',
+                precio: 48,
+                imagen: 'images/cebolla_morada.png'
+              },{
+                id: 15,
+                nombre: 'Cereza',
+                precio: 123,
+                imagen: 'images/cereza.png'
+              },{
+                id: 16,
+                nombre: 'Chicharos',
+                precio: 60,
+                imagen: 'images/chicharos.png'
+              },{
+                id: 17,
+                nombre: 'Cilantro',
+                precio: 53,
+                imagen: 'images/cilantro.png'
+              },{
+                id: 18,
+                nombre: 'Ciruela',
+                precio: 74,
+                imagen: 'images/ciruela.png'
+              },{
+                id: 19,
+                nombre: 'Coco',
+                precio: 39,
+                imagen: 'images/coco.png'
+              },{
+                id: 20,
+                nombre: 'Curcuma',
+                precio: 47,
+                imagen: 'images/curcuma.png'
+              },{
+                id: 21,
+                nombre: 'Frambueza',
+                precio: 130,
+                imagen: 'images/frambueza.png'
+              },{
+                id: 22,
+                nombre: 'Fruta del dragon',
+                precio: 54,
+                imagen: 'images/fruta_del_dragon.png'
+              },{
+                id: 23,
+                nombre: 'Garbanzo',
+                precio: 72,
+                imagen: 'images/garbanzo.png'
+              },{
+                id: 24,
+                nombre: 'Granada',
+                precio: 66,
+                imagen: 'images/granada.png'
+              },{
+                id: 25,
+                nombre: 'Grosella',
+                precio: 77,
+                imagen: 'images/grosella.png'
+              },{
+                id: 26,
+                nombre: 'Grosella Negra',
+                precio: 79,
+                imagen: 'images/grosella_negra.png'
+              },{
+                id: 27,
+                nombre: 'Guayaba Rosa',
+                precio: 40,
+                imagen: 'images/guayaba_rosa.png'
+              },{
+                id: 28,
+                nombre: 'Higo',
+                precio: 36,
+                imagen: 'images/higo.png'
+              },{
+                id: 29,
+                nombre: 'Hoja de platano',
+                precio: 10,
+                imagen: 'images/hoja_platano.png'
+              },{
+                id: 30,
+                nombre: 'Jengibre',
+                precio: 45,
+                imagen: 'images/jengibre.png'
+              },{
+                id: 31,
+                nombre: 'jicama',
+                precio: 59,
+                imagen: 'images/jicama.png'
+              },{
+                id: 32,
+                nombre: 'Jitomate',
+                precio: 46,
+                imagen: 'images/jitomate.png'
+              },{
+                id: 33,
+                nombre: 'Kiwi',
+                precio: 80,
+                imagen: 'images/kiwi.png'
+              },{
+                id: 34,
+                nombre: 'Lechuga_romana',
+                precio: 60,
+                imagen: 'images/lechuga_romana.png'
+              },{
+                id: 35,
+                nombre: 'Lichie',
+                precio: 80,
+                imagen: 'images/lichie.png'
+              },{
+                id: 36,
+                nombre: 'Lima',
+                precio: 48,
+                imagen: 'images/lima.png'
+              },{
+                id: 37,
+                nombre: 'Limon',
+                precio: 69,
+                imagen: 'images/limon.png'
+              },{
+                id: 38,
+                nombre: 'Mango Alphonse',
+                precio: 58,
+                imagen: 'images/mango_alphonse.png'
+              },{
+                id: 39,
+                nombre: 'Mango Kent',
+                precio: 88,
+                imagen: 'images/mango_kent.png'
+              },{
+                id: 40,
+                nombre: 'Maracuya',
+                precio: 66,
+                imagen: 'images/maracuya.png'
+              },{
+                id: 41,
+                nombre: 'Membrillo',
+                precio: 45,
+                imagen: 'images/membrillo.png'
+              },{
+                id: 42,
+                nombre: 'Menta',
+                precio: 33,
+                imagen: 'images/menta.png'
+              },{
+                id: 43,
+                nombre: 'Mora',
+                precio: 64,
+                imagen: 'images/mora.png'
+              },{
+                id: 44,
+                nombre: 'Mora Azul',
+                precio: 70,
+                imagen: 'images/mora_azul.png'
+              },{
+                id: 45,
+                nombre: 'Naranja',
+                precio: 53,
+                imagen: 'images/naranja.png'
+              },{
+                id: 46,
+                nombre: 'Nuez',
+                precio: 110,
+                imagen: 'images/nuez.png'
+              },{
+                id: 47,
+                nombre: 'Papa',
+                precio: 70,
+                imagen: 'images/papa.png'
+              },{
+                id: 48,
+                nombre: 'Papaya',
+                precio: 45,
+                imagen: 'images/papaya.png'
+              },{
+                id: 49,
+                nombre: 'Pepino',
+                precio: 40,
+                imagen: 'images/pepino.png'
+              },{
+                id: 50,
+                nombre: 'Pera',
+                precio: 50,
+                imagen: 'images/pera.png'
+              },{
+                id: 51,
+                nombre: 'Perejil',
+                precio: 3,
+                imagen: 'images/perejil.png'
+              },{
+                id: 52,
+                nombre: 'Pimiento',
+                precio: 40,
+                imagen: 'images/pimiento.png'
+              },{
+                id: 53,
+                nombre: 'Piña',
+                precio: 66,
+                imagen: 'images/piña.png'
+              },{
+                id: 54,
+                nombre: 'Pistache',
+                precio: 100,
+                imagen: 'images/pistaches.png'
+              },{
+                id: 55,
+                nombre: 'Platano',
+                precio: 49,
+                imagen: 'images/platano.png'
+              },{
+                id: 56,
+                nombre: 'Pomelo Verde',
+                precio: 66,
+                imagen: 'images/pomelo_verde.png'
+              },{
+                id: 57,
+                nombre: 'Rabano',
+                precio: 41,
+                imagen: 'images/rabano.png'
+              },{
+                id: 58,
+                nombre: 'Romero',
+                precio: 66,
+                imagen: 'images/romero.png'
+              },{
+                id: 59,
+                nombre: 'Tomate Cherry',
+                precio: 47,
+                imagen: 'images/tomate_cherry.png'
+              },{
+                id: 60,
+                nombre: 'Toronja',
+                precio: 50,
+                imagen: 'images/toronja.png'
+              },{
+                id: 61,
+                nombre: 'Uva Morada',
+                precio: 70,
+                imagen: 'images/uva_morada.png'
+              },{
+                id: 62,
+                nombre: 'Uva Verde',
+                precio: 65,
+                imagen: 'images/uva_verde.png'
+              },{
+                id: 63,
+                nombre: 'Uva',
+                precio: 80,
+                imagen: 'images/uvas.png'
+              },{
+                id: 64,
+                nombre: 'Yaca',
+                precio: 60,
+                imagen: 'images/yaca.png'
+              },{
+                id: 65,
+                nombre: 'Zanahorias',
+                precio: 43,
+                imagen: 'images/zanahorias.png'
+              },{
+                id: 66,
+                nombre: 'Manzana Roja',
+                precio: 36,
+                imagen: 'images/manzana_roja.png'
+              },
+              {
+                id: 67,
+                nombre: 'Manzana Verde',
+                precio: 45,
+                imagen: 'images/manzana_verde.png'
+              }
+
+            ];
+
+            let carrito = [];
+            const divisa = '$';
+            const DOMitems = document.querySelector('#items');
+            const DOMcarrito = document.querySelector('#carrito');
+            const DOMtotal = document.querySelector('#total');
+            const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+            const DOMbotonVolver = document.querySelector('#boton-volver');
+            const miLocalStorage = window.localStorage;
+
+            // Funciones
+
+            /**
+            * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
+            */
+            function renderizarProductos() {
+                baseDeDatos.forEach((info) => {
+                    // Estructura
+                    const miNodo = document.createElement('div');
+                    miNodo.classList.add('card', 'col-sm-4');
+                    // Body
+                    const miNodoCardBody = document.createElement('div');
+                    miNodoCardBody.classList.add('card-body');
+                    // Titulo
+                    const miNodoTitle = document.createElement('h5');
+                    miNodoTitle.classList.add('card-title');
+                    miNodoTitle.textContent = info.nombre;
+                    // Imagen
+                    const miNodoImagen = document.createElement('img');
+                    miNodoImagen.classList.add('img-fluid');
+                    miNodoImagen.setAttribute('src', info.imagen);
+                    // Precio
+                    const miNodoPrecio = document.createElement('p');
+                    miNodoPrecio.classList.add('card-text');
+                    miNodoPrecio.textContent = `${info.precio}${divisa}`;
+                    // Boton 
+                    const miNodoBoton = document.createElement('button');
+                    miNodoBoton.classList.add('btn', 'btn-primary');
+                    miNodoBoton.textContent = '+';
+                    miNodoBoton.setAttribute('marcador', info.id);
+                    miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+                    // Insertamos
+                    miNodoCardBody.appendChild(miNodoImagen);
+                    miNodoCardBody.appendChild(miNodoTitle);
+                    miNodoCardBody.appendChild(miNodoPrecio);
+                    miNodoCardBody.appendChild(miNodoBoton);
+                    miNodo.appendChild(miNodoCardBody);
+                    DOMitems.appendChild(miNodo);
+                });
+            }
+
+            /**
+            * Evento para añadir un producto al carrito de la compra
+            */
+            function anyadirProductoAlCarrito(evento) {
+                // Anyadimos el Nodo a nuestro carrito
+                carrito.push(evento.target.getAttribute('marcador'))
+                // Actualizamos el carrito 
+                renderizarCarrito();
+                // Actualizamos el LocalStorage
+                guardarCarritoEnLocalStorage();
+            }
+
+            /**
+            * Dibuja todos los productos guardados en el carrito
+            */
+            function renderizarCarrito() {
+                // Vaciamos todo el html
+                DOMcarrito.textContent = '';
+                // Quitamos los duplicados
+                const carritoSinDuplicados = [...new Set(carrito)];
+                // Generamos los Nodos a partir de carrito
+                carritoSinDuplicados.forEach((item) => {
+                    // Obtenemos el item que necesitamos de la variable base de datos
+                    const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                        // ¿Coincide las id? Solo puede existir un caso
+                        return itemBaseDatos.id === parseInt(item);
+                    });
+                    // Cuenta el número de veces que se repite el producto
+                    const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+                        // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
+                        return itemId === item ? total += 10
+                         : total;
+                    }, 0);
+                    // Creamos el nodo del item del carrito
+                    const miNodo = document.createElement('li');
+                    miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+                    miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+                    // Boton de borrar
+                    const miBoton = document.createElement('button');
+                    miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+                    miBoton.textContent = 'X';
+                    miBoton.style.marginLeft = '1rem';
+                    miBoton.dataset.item = item;
+                    miBoton.addEventListener('click', borrarItemCarrito);
+                    // Mezclamos nodos
+                    miNodo.appendChild(miBoton);
+                    DOMcarrito.appendChild(miNodo);
+                });
+                // Renderizamos el precio total en el HTML
+                DOMtotal.textContent = calcularTotal();
+            }
+
+            /**
+            * Evento para borrar un elemento del carrito
+            */
+            function borrarItemCarrito(evento) {
+                // Obtenemos el producto ID que hay en el boton pulsado
+                const id = evento.target.dataset.item;
+                // Borramos todos los productos
+                carrito = carrito.filter((carritoId) => {
+                    return carritoId !== id;
+                });
+                // volvemos a renderizar
+                renderizarCarrito();
+                // Actualizamos el LocalStorage
+                guardarCarritoEnLocalStorage();
+
+            }
+
+            /**
+             * Calcula el precio total teniendo en cuenta los productos repetidos
+             */
+            function calcularTotal() {
+                // Recorremos el array del carrito 
+                return carrito.reduce((total, item) => {
+                    // De cada elemento obtenemos su precio
+                    const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                        return itemBaseDatos.id === parseInt(item);
+                    });
+                    // Los sumamos al total
+                    return total + miItem[0].precio;
+                }, 0).toFixed(2);
+            }
+
+            /**
+            * Varia el carrito y vuelve a dibujarlo
+            */
+            function vaciarCarrito() {
+                // Limpiamos los productos guardados
+                carrito = [];
+                // Renderizamos los cambios
+                renderizarCarrito();
+                // Borra LocalStorage
+                localStorage.clear();
+
+            }
+            function volverMain(){
+                location.href='page_main.html';
+            }
+
+            function guardarCarritoEnLocalStorage () {
+                miLocalStorage.setItem('carrito', JSON.stringify(carrito));
+            }
+
+            function cargarCarritoDeLocalStorage () {
+                // ¿Existe un carrito previo guardado en LocalStorage?
+                if (miLocalStorage.getItem('carrito') !== null) {
+                    // Carga la información
+                    carrito = JSON.parse(miLocalStorage.getItem('carrito'));
+                }
+            }
+
+            // Eventos
+            DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+            DOMbotonVolver.addEventListener('click', volverMain);
+
+            // Inicio
+            cargarCarritoDeLocalStorage();
+            renderizarProductos();
+            renderizarCarrito();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Elementos generados a partir del JSON -->
+            <main id="items" class="col-sm-8 row"></main>
+            <!-- Carrito -->
+            <aside class="col-sm-4">
+                <h2>Carrito</h2>
+                <!-- Elementos del carrito -->
+                <ul id="carrito" class="list-group"></ul>
+                <hr>
+                <!-- Precio total -->
+                <p class="text-right">Total: $<span id="total"></span></p>
+                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                <button id="boton-volver" class="btn btn-danger">Volver</button>
+                </aside>
+        </div>
+    </div>
+</body>
+</html>
